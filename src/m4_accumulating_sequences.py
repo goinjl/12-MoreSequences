@@ -400,7 +400,12 @@ def rectangles_from_circles(circles):
     #            in this function, so DON'T draw anything in here!
     ###########################################################################
     # -------------------------------------------------------------------------
-
+    nums = []
+    for k in range(len(circles)):
+        nums = nums + [
+            rg.Rectangle(rg.Point(circles[k].center.x - circles[k].radius, circles[k].center.y + circles[k].radius),
+                         rg.Point(circles[k].center.x + circles[k].radius, circles[k].center.y - circles[k].radius))]
+    return nums
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
