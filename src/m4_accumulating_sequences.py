@@ -288,6 +288,9 @@ def draw_shapes(shapes, window):
     # FWIW: The word for ideas like this is "polymorphism".
     ###########################################################################
     # -------------------------------------------------------------------------
+    for k in range(len(shapes)):
+        shapes[k].attach_to(window)
+    window.render(0.3)
 
 
 def run_test_rectangles_from_circles():
@@ -405,6 +408,7 @@ def rectangles_from_circles(circles):
         nums = nums + [
             rg.Rectangle(rg.Point(circles[k].center.x - circles[k].radius, circles[k].center.y + circles[k].radius),
                          rg.Point(circles[k].center.x + circles[k].radius, circles[k].center.y - circles[k].radius))]
+        
     return nums
 
 # -----------------------------------------------------------------------------
